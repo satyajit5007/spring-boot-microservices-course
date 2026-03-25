@@ -9,7 +9,6 @@ on:
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
 
     env:
@@ -29,8 +28,8 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-      # ✅ ADD THIS STEP
-      - name: Give execute permission to mvnw
+      # ✅ THIS IS MISSING IN YOUR CURRENT RUN
+      - name: Fix mvnw permission
         run: chmod +x mvnw
 
       - name: Build with Maven
