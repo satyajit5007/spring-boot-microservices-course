@@ -28,9 +28,11 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-      # ✅ THIS IS MISSING IN YOUR CURRENT RUN
       - name: Fix mvnw permission
         run: chmod +x mvnw
+
+      - name: Debug permissions (optional)
+        run: ls -l mvnw
 
       - name: Build with Maven
         run: ./mvnw -ntp verify
